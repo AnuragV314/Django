@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+</head>
+
+<body>
+    {% include 'navbar.html' %}
+    <h1>This is our home page.</h1>
+
+    <!-- template to view  -->
+    <form action="/home/" method="POST">
+        {% csrf_token %}
+        <input type="checkbox" name="check" id="">
+        <button>send</button>
+    </form>
+
+
+    <!-- view to template  -->
+    {% if isActive %}
+    <!-- accessing dynamic values -->
+    <h2>Today day is {{date}}</h2>
+    <hr>
+    <h2>Student Data:</h2>
+    <h3>Student Name: {{students.sName}}</h3>
+    <h3>Student ID: {{students.sId}}</h3>
+    <h3>Student College Name: {{students.scollege}}</h3>
+    <hr>
+    <h2>Fevorite Programs:</h2>
+    {% for i in listOfProgram%}
+    <ul>{{i}}</ul>
+    {% endfor %}
+    {% endif %}
+    <hr>
+</body>
+
+</html>

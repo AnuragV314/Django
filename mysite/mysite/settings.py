@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'website',
     'emp',
     'testimonial',
+    'feedback',
 ]
 
 MIDDLEWARE = [
